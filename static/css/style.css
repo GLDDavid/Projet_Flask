@@ -1,0 +1,47 @@
+.mychart{
+    min-width: 500px;
+    min-height: 500px;
+}
+
+.homme{
+    color : rgb(47, 0, 255);
+}
+
+.femme{
+    color : green;
+}
+.content-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.table{
+    width: 200px;
+}
+
+.content{
+    align-items: center;
+}
+
+.KPI{
+    text-align: center;
+    margin: 50px 300px;
+    padding-top: 12px;
+    border: 1px solid;
+    border-color: black;
+    background-color: rgba(144, 180, 175, 0.37)
+    ;
+}
+
+.valeur_KPI{
+    font-weight: bold;
+    color:rgb(126, 24, 24);
+}
+
+.pieddepage{
+    min-height: 300px;
+}
+
+.form{
+    padding: 10px;
+}

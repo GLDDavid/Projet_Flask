@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+<div class="alert alert-warning alert-dismissible fade show hstack gap-3" role="alert">
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
+        <button type="button" class="close btn btn-secondary me-md-2" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+</div>
+{% endif %}
+{% endwith %}
+
+<div class = "container">
+    <div class="row align-item-center">
+        <h1 class = "col"> Formulaire d'enregistrement des informations du chauffeurs </h1>
+    </div>
+</div>
+
+<section class="container">
+    <div class="shadow-lg w-75 mx-auto">
+        <form class="form" action="/resultat"  method="POST">
+                {{ t_formulaire.hidden_tag() }}
+                {{ t_formulaire.csrf_token() }}
+                <div class = "form-row d-flex flex-row mb-5 justify-content-between">
+                    <div class="form-group col-md-3">
+                        {{ t_formulaire.cf_prenom.label(class="form-label") }}
+                        {{ t_formulaire.cf_prenom(class="form-control") }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ t_formulaire.cf_nom.label(class="form-label") }}
+                        {{ t_formulaire.cf_nom(class="form-control") }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        
+                    </div>
+                </div>
+
+                <div class = "form-row d-flex flex-row justify-content-between mb-5">
+                    <div class="form-group col-md-3">
+                        {{ t_formulaire.cf_sexe.label(class="form-label") }}
+                        {{ t_formulaire.cf_sexe(class="form-control") }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ t_formulaire.cf_camion.label(class="form-label") }}
+                        {{ t_formulaire.cf_camion(class="form-control") }}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ t_formulaire.cf_kms.label(class="form-label") }}
+                        {{ t_formulaire.cf_kms(class="form-control") }}
+                    </div>
+                </div>
+            <div class="content">
+                {{ t_formulaire.cf_commentaires.label(class="form-label") }}
+                {{ t_formulaire.cf_commentaires(class="form-control") }}
+            </div>
+            <div class=" bouton ">{{ t_formulaire.cf_envoyer(class = "btn btn-primary btn-lg mt-3 ml-3") }}</div>
+        </form>
+    </div>
+
+</section>
+
+
+{% endblock %}
